@@ -1,6 +1,9 @@
-const Path = require('path');
+// ==UserScript==
+// @name         Bypass DevTools Detection
+// @namespace    Violentmonkey Scripts
+// @match        ://*/
+// @run-at       document-start
+// @grant        none
+// ==/UserScript==
 
-module.exports = function FakeDepLoader(source, sourcemap) {
-  this.query.files.forEach(f => this.addDependency(Path.resolve(f)));
-  this.callback(null, source, sourcemap);
-};
+(function()
